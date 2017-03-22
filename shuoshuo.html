@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+        *{padding:0;margin:0;} 
+        #text{height:150px;width:500px;margin:10px;}
+		#div1{padding:5px;margin:10px;width:510px;}
+		#div1 li{width:480px;padding:10px;border-bottom:1px dotted #333;list-style:none;}
+  </style>
+ </head>
+ <body>
+        <textarea id="text" value=""></textarea>
+		<input type="button" value="提交" id="btn1" />
+		<div id="div1">
+		    
+		</div>
+
+		<script type="text/javascript">
+		    //留言板
+			var oBtn = document.getElementById('btn1');
+			var oDiv = document.getElementById('div1');
+			var  oTxt = document.getElementById('text');
+			var aLi  = oDiv.children;
+
+			//按下  回车和shift  提交
+            oTxt.onkeydown=function(ev){
+			    var Event=ev||event;
+				var keycode=Event.keyCode;
+				if(keycode==13 && Event.shiftKey){
+				    ssFn();
+					return false;
+				}
+			}
+            
+			//点击按钮提交
+			oBtn.onclick = ssFn;
+            
+			//执行函数
+			function ssFn(){
+			    var value=oTxt.value;
+				var oNewLi = document.createElement('li');
+				var len=aLi.length;
+                //当内容为空时不提交
+				if(value==''){
+					return;
+				}
+			    if(value.indexOf("<"+"/"+"script>")!=(-1)){
+				    return oTxt.value='';
+				}
+				oNewLi.innerHTML =value;
+				if(len==0){//当div中没有li时，直接插入
+				    oDiv.appendChild(oNewLi);
+				}else{        //将li插入到div的第一个
+				    oDiv.insertBefore(oNewLi,oDiv.children[0]);
+				}
+				//清空内容
+				oTxt.value='';
+			}
+			
+		</script>
+ </body>
+</html>

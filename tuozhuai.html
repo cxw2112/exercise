@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			* {margin:0;padding:0;}
+			
+			#div1 {width:120px;height:120px;position:absolute;background:#ff6600;}
+			#div2 {width:120px;height:120px;position:absolute;background:#cc00ff;}
+			#div3 {width:120px;height:120px;position:absolute;background:#00ccff;}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+
+		<script type="text/javascript">
+		tuozhuai('div1');
+		tuozhuai('div2');
+		tuozhuai('div3');
+
+		
+		var index=4;
+		function tuozhuai(id){
+			var oDiv=document.getElementById(id);
+			oDiv.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var a=oEvent.clientX-oDiv.offsetLeft;
+				var b=oEvent.clientY-oDiv.offsetTop;
+				oDiv.style.zIndex=index++;
+			    document.onmousemove=function(ev){
+				    var oEvent=ev||event;
+					var x=oEvent.clientX;
+					var y=oEvent.clientY;
+					if(x<a){
+					    oDiv.style.left=0;
+					}else if(y<b){
+					    oDiv.style.top=0;
+					}else if(x-a>document.documentElement.clientWidth - oDiv.offsetWidth){
+					    oDiv.style.left=document.documentElement.clientWidth - oDiv.offsetWidth-a;
+					}else if(y-b>document.documentElement.clientHeight - oDiv.offsetHeight){
+					    oDiv.style.top=document.documentElement.clientHeight - oDiv.offsetHeight-b;
+					}else{
+					    oDiv.style.left=x-a+'px';
+					    oDiv.style.top=y-b+'px';
+					}
+				}
+				document.onmouseup=function(){
+				    document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

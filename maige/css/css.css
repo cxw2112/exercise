@@ -1,0 +1,90 @@
+/* CSS 初始化 */
+* {margin:0;padding:0;}
+html {font-family:"宋体", "微软雅黑", "Arial";font-size:14px;color:#333;}
+li, dd {list-style:none;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;font-size:inherit;}
+em, i {font-style:normal;}
+a {text-decoration:none;color:#333;}
+a:hover {text-decoration:none;color:#000;}
+img {display:block;border:none;}
+input:focus {outline:none;}
+.clearFix:after {content:'';display:block;clear:both;}
+.clearFix {zoom:1;}
+/* CSS 初始化 END */
+/* 公共样式 */
+.w1003 {width:1003px;margin:0 auto;}
+.fl {float:left;}
+.fr {float:right;}
+
+html {overflow-x:hidden;}
+
+body {background:#fff;}
+
+.head{padding-top:60px;}
+.head h4{margin-left:10px;float:right;cursor:pointer;letter-spacing:1px;font-family:"Arial";text-align:center;border:1px solid #d9d9d9;height:23px;width:152px;line-height:23px;}
+.head img{margin-right:10px;float:right;}
+.head ul{float:right;margin-top:12px;}
+.head ul li{margin-left:5px;float:right;}
+.head ul li a{text-align:center;display:block;color:#fff;background:#595857;line-height:20px;height:20px;width:88px;}
+.head ul li a:hover,.head ul li.selected a{background:#c52d2a;}
+
+.header{margin-top:10px;}
+.header .header_left{position:relative;}
+.header .header_left .img1{position:absolute;top:-65px;left:62px;}
+.header .header_right{position:relative;margin-left:5px;background:url(images/erweima.jpg) 690px 167px no-repeat;}
+.header .header_right .left{position:absolute;top:105px;left:5px;z-index:3;cursor:pointer}
+.header .header_right .right{position:absolute;top:105px;right:5px;z-index:3;cursor:pointer}
+
+.top{font-family:"微软雅黑";line-height:28px;height:28px;border-top:1px solid #de231a;border-bottom:1px solid #bdbdbd;}
+.top span{padding:0 32px 0 12px;border-top:5px solid #de231a;}
+
+.main{margin-top:10px;border-bottom:1px solid #dededc;}
+.main_left{width:650px;}
+.mgzx{height:177px;width:320px;float:left;}
+.mgzx_tu{padding-top:5px;}
+.tul{float:left;}
+.tur{float:right;width:140px;padding:0 11px;}
+.mgzx_list{padding-top:5px}
+.mgzx_list p{font-size:12px;background:url(../images/list_01.jpg) 3px 7px no-repeat;line-height:20px;text-indent:15px;}
+
+.dstd{height:177px;width:320px;margin-left:10px;float:left;}
+.dstd_tu{padding:8px 30px 0 5px;}
+.dstd_list{}
+.dstd_list h3{font-weight:700;padding-top:8px;}
+.dstd_list p{line-height:20px;padding-top:10px;}
+
+.mgsp{height:150px;width:320px;float:left;}
+.mgsp_list{width:160px;padding-top:5px;float:left;}
+.mgsp_list p{font-size:12px;background:url(../images/list_02.jpg) 0px 2px no-repeat;line-height:22px;text-indent:30px;}
+.mgsp_list h3 a,.mgsp_list h3 a:hover{font-weight:700;padding-left:30px;color:#da251c;line-height:22px;}
+.mgsp_tu{padding-top:5px;}
+
+.alfx{height:150px;width:320px;margin-left:10px;float:left;}
+.alfx_list{padding-top:5px;}
+.alfx_list p{font-size:12px;background:url(../images/list_01.jpg) 3px 7px no-repeat;line-height:20px;text-indent:15px;}
+
+.main_right{width:325px;margin:0px 0 0 25px;}
+.rtop{font-family:"微软雅黑";line-height:28px;height:28px;border-bottom:1px solid #bdbdbd;}
+.rtop span{padding:0 32px 0 12px;float:left;}
+.rtop p{float:right;padding-right:15px;}
+
+.hd{padding-top:5px;height:95px;}
+.hd_tu{float:left;}
+.hd_nr{font-size:12px;float:right;width:200px;height:76px;line-height:22px;}
+.hd_nr h3{font-weight:700;}
+
+.kcjs p{text-align:center;color:#fff;border:1px solid #dededc;line-height:20px;width:104px;height:20px;float:left;margin:5px 0;}
+
+.zxbm p a{font-size:12px;float:left;width:213px;height:22px;background:#dededc;color:#000;line-height:22px;text-align:center;}
+.zxbm span a{font-size:12px;float:left;width:106px;height:22px;background:#de231a;color:#fff;line-height:22px;text-align:center;}
+
+.mggg{margin-top:10px;}
+
+.mgggb{width:319px;}
+.mgggb p{float:left;width:159px;height:22px;font-size:12px;background:url(../images/list_01.jpg) 3px 7px no-repeat;line-height:20px;text-indent:15px;}
+
+.zp{margin-top:5px;margin-left:5px;float:left;}
+.xlwb{float:left;margin:13px 0 0 27px;}
+.wx{float:left;margin:10px 0 55px 34px;}
+
+.di{text-align:right;line-height:26px;font-size:12px;color:#606060;}

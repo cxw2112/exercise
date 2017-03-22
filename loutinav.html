@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			* {margin:0;padding:0;}
+			li {list-style:none;}
+			.list {}
+			.list_01 {height:782px;background:red;}
+			.list_02 {height:658px;background:green;}
+			.list_03 {height:524px;background:yellow;}
+			.list_04 {height:479px;background:deepskyblue;}
+			
+			.side_nav {width:40px;position:fixed;right:30px;bottom:80px;z-index:9;}
+			.side_nav ul li {height:40px;background:#ff6600;line-height:40px;text-align:center;color:#fff;cursor:pointer;margin-bottom:3px;}
+		</style>
+	</head>
+	<body>
+		
+		<div class="list list_01"></div>
+		<div class="list list_02"></div>
+		<div class="list list_03"></div>
+		<div class="list list_04"></div>
+		
+		<div class="side_nav" id="side_nav">
+			<ul></ul>
+		</div>
+		
+		<script type="text/javascript">
+			//思路：1. 获取一些必要的节点    2. 给 li 节点绑定事件    3. 模块到页面顶部的上边距     4. 把边距赋值给 scrollTop
+			
+			//获取所有的DIV节点对象
+			var aDivList = getEleByClass(document.body, 'list');
+			var Len      = aDivList.length;
+			
+			var oSideDiv = document.getElementById('side_nav');
+			var oSideUl  = oSideDiv.children[0];
+			
+			//新建 li 节点
+			var aLiList = [];
+			for (var i = 0; i < Len; i++){
+				var oNewLi = document.createElement('li');
+				oNewLi.innerHTML = i + 1;
+				oSideUl.appendChild(oNewLi);
+				//给 li 加索引
+				oNewLi.index = i;
+				aLiList[i] = oNewLi;
+				//释放内存
+				oNewLi = null;
+			}
+			
+			
+			//绑定事件
+			for (var i = 0; i < Len; i++){
+				aLiList[i].onclick = function(){
+					//this => 指向发生事件的那个对象
+					var v = this.index;
+					var t = aDivList[v].offsetTop;
+					document.body.scrollTop = t;
+					document.documentElement.scrollTop = t;
+				};
+			}
+			
+			function getEleByClass(obj, classname){
+				var aAll = obj.getElementsByTagName('*');
+				var arr = [];
+				for (var i = 0; i < aAll.length; i++){
+					if (aAll[i].className.substr(0, 4) == classname){
+						arr.push(aAll[i]);
+					}
+				}
+				return arr;
+			}
+			
+		</script>
+	</body>
+</html>

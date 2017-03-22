@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<body>
+		
+
+		<script type="text/javascript">
+			
+			//计算圆的面积，手动输入圆的半径，然后通过aler来提示圆的面积
+			//s = PI*r*r
+			var PI = 3.14;
+			var s1;
+			var s2;
+			var c = prompt('请输入周长');
+			c = parseFloat(c);
+			
+			//r = NaN
+			
+			if (!c){
+				alert('您输入的数据有误');
+		    } else {
+			    var a=c/4;
+				var s1=a*a;
+			    var r=c/(2*PI);
+				var s2=PI*r*r;
+				alert('圆的面积是：' + s2+'，正方形的面积是：'+s1);
+				if(s1>s2){
+				    alert('圆的面积小于正方形的面积');
+				}else{
+				    alert('圆的面积大于正方形的面积');
+				}
+			}
+			
+		</script>
+	</body>
+</html>

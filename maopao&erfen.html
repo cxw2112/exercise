@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script type="text/javascript">
+	function maopao(arr){
+	    var temp;
+		for(var j=0;j<arr.length-1;j++){
+			for(var i=0;i<arr.length-1-j;i++){
+				if(arr[i]>arr[i+1]){
+					temp=arr[i];
+					arr[i]=arr[i+1];
+					arr[i+1]=temp;
+				} 
+			}
+		}
+	return arr;
+	}
+	var res=maopao([5,2,3,1,6]);
+  console.log(res);
+
+    //二分查找（折版查找）
+	var arr2 = [1, 2, 3, 4, 5, 6, 7]; //3
+			
+	function findVal(val, arr2, sIndex, eIndex){
+		var len        = arr2.length,
+		  startIndex = sIndex ? sIndex : 0,
+		  endIndex   = eIndex ? eIndex : len - 1,
+		  midIndex   = Math.floor((startIndex + endIndex) / 2); //math.floor()向下取整
+	
+		if (startIndex > endIndex){ //非法
+			return;
+		}
+		var midVal = arr2[midIndex];
+		if (midVal === val){
+			return midIndex;
+		} else if (val < midVal){
+			return findVal(val, arr2, startIndex, midIndex - 1);
+		} else {
+			return findVal(val, arr2, midIndex + 1, endIndex);
+		}
+	}
+	var t = findVal(3, arr2);
+	console.log(t);
+
+	</script>
+ </body>
+</html>
